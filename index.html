@@ -94,7 +94,7 @@
               from="60"
               to="75"
               begin="runButton.click"
-              dur="0.2s"
+              dur="0.4s"
             />
           </circle>
           <image
@@ -112,7 +112,7 @@
               from="0"
               to="1"
               begin="startButton.click"
-              dur="0.2s"
+              dur="0.4s"
               fill="freeze"
             />
           </image>
@@ -122,22 +122,25 @@
       </svg>
     </div>
     <script>
-      // window.onload = function() {
-      //   var audio = document.createElement("audio");
-      //   audio.src = "490141.m4a";
-      //   audio.addEventListener(
-      //     "canplaythrough",
-      //     function() {
-      //       $(".yinyu").show();
-      //       audio.play();
-      //     },
-      //     false
-      //   );
-      //   audio.load();
-      // };
+        var myAuto = document.getElementById("myaudio");
+      window.onload = function() {
+        // var audio = document.createElement("audio");
+        // audio.src = "490141.m4a";
+        // audio.addEventListener(
+        //   "canplaythrough",
+        //   function() {
+        //     $(".yinyu").show();
+        //     audio.play();
+        //   },
+        //   false
+        // );
+        // audio.load();
+        myAuto.play();
+        myAuto.pause()
+      };
       var num = 0;
       var oldTime = null;
-      var myAuto = document.getElementById("myaudio");
+    
       var isStart = false;
       function startGame() {
         isStart = true;
