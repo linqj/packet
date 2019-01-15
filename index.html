@@ -53,13 +53,14 @@
           <animate attributeName="opacity" from="1" to="0"  begin="click" dur="0.2s" fill="freeze" restart="never"/>
       </text>
       <g>
-          <circle //标签画圆专用
-          cx="200" // 圆坐标 横坐标（都是基于svg）
-          cy="150" // 圆坐标 纵坐标
-          r="60"  //圆半径
-          fill="none" // ！重要 决定是圆圈还是圆
-          stroke="#ffffff"  //颜色
-          stroke-width="5" //圆圈宽度
+          <!-- fill="none" 标识是圆还是圆圈 -->
+          <circle 
+          cx="200" 
+          cy="150"
+          r="60"  
+          fill="none" 
+          stroke="#ffffff"  
+          stroke-width="5"
           opacity="0"
   >
   <animate attributeName="opacity" from="0" to="1"  begin="startButton.click" dur="0.3s" fill="freeze"/>
@@ -70,7 +71,7 @@
           x="150" y="100"
           id="runButton"
           width="100px" height="100px" opacity="0" onclick="showPackage()">
-          <animate attributeName="opacity" from="0" to="1"  begin="startButton.click" dur="0.2s" fill="freeze"/>
+          <!-- <animate attributeName="opacity" from="0" to="1"  begin="startButton.click" dur="0.2s" fill="freeze"/> -->
         </image> 
         <!-- 咻一咻的光晕 -->
       
