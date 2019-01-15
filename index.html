@@ -127,8 +127,7 @@
       window.onload = function() {
         alert(1)
         // myAuto.load();
-        myAuto.play();
-        // myAuto.pause();
+    
       };
       var num = 0;
       var oldTime = null;
@@ -136,6 +135,8 @@
       var isStart = false;
       function startGame() {
         isStart = true;
+        myAuto.play();
+        // myAuto.pause();
       }
       function showPackage() {
         //判断是否已经点击了开始游戏，不然不允许进行咻一咻
