@@ -10,4 +10,5 @@ video.play()必须要有时间触发才起作用
 在开始的点击事件中
  myAuto.play();
         myAuto.pause();
+        可解决
 
