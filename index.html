@@ -65,10 +65,10 @@
           xlink:href="./images/start_text.png"/>
       </svg> -->
       <svg
-      style="display:inline-block;width:750px;height:1200px;"
+      style="display:inline-block;width:750px;height:1000px;"
         xmlns="http://www.w3.org/2000/svg"
         id="mySVG"
-        viewBox="0 0 750 1200" preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 750 1000" preserveAspectRatio="xMidYMid meet"
       >
       <!-- <image x="0" y="0"
       width="200" height="126"
@@ -79,7 +79,7 @@
           xlink:href="./images/start_text.png"
           x='40' y='185' width="300" height="105" 
         >
-          <!-- <animate
+          <animate
             attributeName="opacity"
             from="1"
             to="0"
@@ -87,14 +87,176 @@
             dur="0.1s"
             fill="freeze"
             restart="never"
-          /> -->
+          />
         </image>
+   
+        <g>
+          <!-- 朦胧的黄色背景 -->
+            <!-- <circle
+            cx="180"
+            cy="365"
+            r="64"
+          fill="#787157"
+          opacity=0.4
+          > -->
+          </circle> 
+        <!-- 实心圆  #ffe721 -->
+        <circle
+          cx="180"
+          cy="365"
+          r="38"
+        fill="#ffe405"
+        opacity=0.9
+        >
+        <animate
+        attributeName="fill"
+        from="#fee233"
+        to="#fcdb54"
+        begin="0s"
+        dur="1s"
+        repeatCount="indefinite" 
+      />
+        </circle> 
+        <!-- 第一条虚线 -->
+        <circle
+        cx="180"
+        cy="365"
+        r="40"
+        fill="none"
+        stroke="#ffe405"
+        stroke-width="2"
+        opacity=0.9
+      >
+        <animate
+          attributeName="r"
+          from="40"
+          to="52"
+          begin="0s"
+          dur="1s"
+          repeatCount="indefinite" 
+        />
+        <animate
+        attributeName="opacity"
+        from="0.9"
+        to="0"
+        begin="0s"
+        dur="1s"
+        repeatCount="indefinite" 
+      /> 
+      </circle>
+       <!-- 第二条虚线 -->
+       <circle
+       cx="180"
+       cy="365"
+       r="46"
+       fill="none"
+       stroke="#ffe405"
+       stroke-width="1.8"
+       opacity=0.6
+     >
+       <animate
+         attributeName="r"
+         from="46"
+         to="54"
+         begin="0s"
+         dur="1s"
+         repeatCount="indefinite" 
+       />
+       <animate
+       attributeName="opacity"
+       from="0.6"
+       to="0"
+       begin="0s"
+       dur="1s"
+       repeatCount="indefinite" 
+     /> 
+     </circle>
+      <!-- 第3条虚线 -->
+      <circle
+      cx="180"
+      cy="365"
+      r="50"
+      fill="none"
+      stroke="#ffe405"
+      stroke-width="1.5"
+      opacity=0.3
+    >
+      <animate
+        attributeName="r"
+        from="50"
+        to="58"
+        begin="0s"
+        dur="1s"
+        repeatCount="indefinite" 
+      />
+      <animate
+      attributeName="opacity"
+      from="0.3"
+      to="0"
+      begin="0s"
+      dur="1s"
+      repeatCount="indefinite" 
+    /> 
+    </circle>
+     <!-- 第4条虚线 -->
+     <circle
+     cx="180"
+     cy="365"
+     r="58"
+     fill="none"
+     stroke="#ffe405"
+     stroke-width="1.5"
+     opacity=0.1
+   >
+     <animate
+       attributeName="r"
+       from="58"
+       to="64"
+       begin="0s"
+       dur="1s"
+       repeatCount="indefinite" 
+     />
+     <animate
+     attributeName="opacity"
+     from="0.1"
+     to="0"
+     begin="0s"
+     dur="1s"
+     repeatCount="indefinite" 
+   /> 
+   </circle>
+        </g>
+        <g id="startButton">
+            <text  x="155" y="360" fill="#d12e1b" font-size="25">开始
+                <animate
+            attributeName="opacity"
+            from="1"
+            to="0"
+            begin="startButton.click"
+            dur="0.1s"
+            fill="freeze"
+            restart="never"
+          />
+            </text>
+            <text x="155" y="387" fill="#d12e1b" font-size="25">游戏
+                <animate
+            attributeName="opacity"
+            from="1"
+            to="0"
+            begin="startButton.click"
+            dur="0.1s"
+            fill="freeze"
+            restart="never"
+          />
+            </text>
+        </g>
+        
         <!-- <image
-          xlink:href="./images/start.png"
+          xlink:href="./images/star.gif"
           x="140"
           y="350"
-          width="10rem"
-          height="10rem"
+          width="135"
+          height="135"
           id="startButton"
           onclick="startGame()"
         >
@@ -108,7 +270,7 @@
             restart="never"
           />
         </image> -->
-    <!-- </g> -->
+   <!-- </g> -->
         <!-- 第一页 -->
         <!-- 第二页 -->
         <!-- <g id="twoPage">
