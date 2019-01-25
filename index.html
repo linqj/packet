@@ -74,23 +74,16 @@
         viewBox="0 0 100% 100%"
         preserveAspectRatio="xMidYMid meet"
       >
-        <image
+      <g id="startImg">
+          <image
           xlink:href="./images/start_text.png"
           x="7%"
           y="25%"
           width="86%"
           height="105"
         >
-          <animate
-            attributeName="opacity"
-            from="1"
-            to="0"
-            begin="startButton.click"
-            dur="0.1s"
-            fill="freeze"
-            restart="never"
-          />
         </image>
+      </g>
         <g id="circleButton">
           <circle cx="50%" cy="55%" r="38" fill="#ffe405" opacity="0.9">
             <animate
@@ -237,7 +230,7 @@
             />
           </text>
         </g>
-        <g id="twoPage">
+        <!-- <g id="twoPage">
           <image
             xlink:href="./images/draw_text.png"
             x="25%"
@@ -256,7 +249,7 @@
               restart="never"
             />
           </image>
-        </g>
+        </g> -->
         <g id="parent">
         </g>
         <g id="loading">
@@ -270,10 +263,10 @@
       var isStart = false;
       var svgDoc = document.getElementById("parent");
       var circleButton = document.getElementById("circleButton");
-      var twoPage = document.getElementById("twoPage");
       var loading = document.getElementById("loading");
       var startButton = document.getElementById("startButton");
       var myaudio = document.getElementById("myaudio");
+      var startImg = document.getElementById("startImg");
       function startGame() {
         isStart = true;
         //缓存音乐
@@ -282,14 +275,13 @@
         myAuto.pause();
         let child='<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge> 咻 </text>';
         startButton.innerHTML = child;
+        let startChangeImg='<image xlink:href="./images/draw_text.png" x="25%" y="25%" width="50%" height="105"/>'
+        startImg.innerHTML = startChangeImg;
       }
       function showPackage() {
         //判断是否已经点击了开始游戏，不然不允许进行咻一咻
         if (isStart) {
-          // if(myAuto.paused){
-          //   alert(1);
           myAuto.play();
-          // }
           console.log(123456);
           if (num != 3) {
             num = num + 1;
@@ -297,9 +289,9 @@
             let child ='<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/result_text.png" x="7%" y="15%" width="86%" height="220"/><image xlink:href="./images/button_background.png" x="7%" y="45%" width="86%" height="200"/><image  xlink:href="./images/button.png"  x="30%"  y="57%" width="40%"  height=60  onclick="goToActive()"/>';
             setTimeout(function() {
               svgDoc.innerHTML = child;
-              twoPage.innerHTML = "";
               circleButton.innerHTML = "";
               startButton.innerHTML = '';
+              startImg.innerHTML = '';
             }, 1000);
           }
         }
