@@ -373,6 +373,11 @@
         <g id="parent">
             <!-- <rect x="0" y="0" opacity="0.5" height="1000" width="750" fill="#000000"/>
             <image xlink:href="./images/result_text.png" x="23" y="120" width="325" height="202"/>
+                  <image
+            xlink:href="./images/draw_text.png"
+            x='25' y='185' width="300" height="105" 
+            opacity="0"
+          >
             <image xlink:href="./images/button_background.png" x="23" y="320" width="325" height="104"/>
             <image xlink:href="./images/button.png" x="104" y="395" width="150" height="48" onclick="goToActive()"/>  -->
         </g>
@@ -406,7 +411,7 @@
           if (num != 3) {
             num = num + 1;
           } else if (num == 3) {
-            let child ='<rect x="0" y="0" opacity="0.5"  height="1000" width="750"  fill="#000000"/><image xlink:href="./images/result_text.png" x="23" y="120" width="325" height="202"/><image xlink:href="./images/button_background.png" x="23" y="320" width="325" height="104"/><image xlink:href="./images/button.png" x="104" y="395" width="150" height="48" onclick="goToActive()"/>';
+            let child ='<rect x="0" y="0" opacity="0.5"  height="1000" width="750"  fill="#000000"/><image xlink:href="./images/result_text.png" x="25" y="120" width="325" height="202"/><image xlink:href="./images/button_background.png" x="25" y="320" width="325" height="104"/><image xlink:href="./images/button.png" x="112" y="395" width="150" height="48" onclick="goToActive()"/>';
             setTimeout(function() {
               svgDoc.innerHTML = child;
               twoPage.innerHTML = '';
