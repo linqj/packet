@@ -48,23 +48,24 @@
         width: 100%;
         height: 100%;
       }
-      .parent-img{
-        display:block;
-        margin:0 auto;
-      }
+      text {
+                  font-weight:700;
+                  text-anchor: middle;  /* 文本水平居中 */
+                  pointer-events:auto;
+                  dominant-baseline: middle; /* 文本垂直居中 */
+            }
     </style>
   </head>
   <body>
     <div class="app">
-        <audio src="" id="myaudio" controls="controls" hidden="true" preload="load"></audio>
-     
-      <!-- <svg style="display:inline-block;width:100%;height:100%;">
-        <image x="0" y="0"
-          width="200" height="126"
-          xlink:href="./images/start_text.png"/>
-      </svg> -->
+      <audio
+        src="xiu.mp3"
+        id="myaudio"
+        controls="controls"
+        hidden="true"
+        preload="load"
+      ></audio>
       <div>
-
       </div>
       <svg
         style="display:inline-block;width:100%;height:100%;"
@@ -73,11 +74,6 @@
         viewBox="0 0 100% 100%"
         preserveAspectRatio="xMidYMid meet"
       >
-        <!-- <image x="0" y="0"
-      width="200" height="126"
-      xlink:href="./images/start_text.png"/> -->
-        <!-- 第一页 -->
-        <!-- <g> -->
         <image
           xlink:href="./images/start_text.png"
           x="7%"
@@ -95,19 +91,8 @@
             restart="never"
           />
         </image>
-
         <g id="circleButton">
-          <!-- 朦胧的黄色背景 -->
-          <!-- <circle
-            cx="180"
-            cy="365"
-            r="64"
-          fill="#ffe721"
-          opacity=0.1
-          > -->
-          <!-- </circle>  -->
-          <!-- 实心圆  #ffe721 -->
-          <circle cx="190" cy="55%" r="38" fill="#ffe405" opacity="0.9">
+          <circle cx="50%" cy="55%" r="38" fill="#ffe405" opacity="0.9">
             <animate
               attributeName="fill"
               from="#fee233"
@@ -119,7 +104,7 @@
           </circle>
           <!-- 第一条虚线 -->
           <circle
-            cx="190"
+          cx="50%"
             cy="55%"
             r="40"
             fill="none"
@@ -146,7 +131,7 @@
           </circle>
           <!-- 第二条虚线 -->
           <circle
-            cx="190"
+          cx="50%"
             cy="55%"
             r="46"
             fill="none"
@@ -173,7 +158,7 @@
           </circle>
           <!-- 第3条虚线 -->
           <circle
-            cx="190"
+          cx="50%"
             cy="55%"
             r="50"
             fill="none"
@@ -200,7 +185,7 @@
           </circle>
           <!-- 第4条虚线 -->
           <circle
-            cx="190"
+          cx="50%"
             cy="55%"
             r="58"
             fill="none"
@@ -226,8 +211,8 @@
             />
           </circle>
         </g>
-        <g id="startButton" onclick="startGame()">
-          <text x="165" y="54.5%" fill="#d12e1b" font-size="25" font-weight="700">
+        <g id="startButton">
+          <text x="50%" y="53.5%" onclick="startGame()" fill="#d12e1b" font-size="25" dominant-baseline=text-before-edge>
             开始
             <animate
               attributeName="opacity"
@@ -239,7 +224,7 @@
               restart="never"
             />
           </text>
-          <text x="165" y="58.3%" fill="#d12e1b" font-size="25" font-weight="700">
+          <text x="50%" y="57%" onclick="startGame()" fill="#d12e1b" font-size="25" dominant-baseline=text-before-edge>
             游戏
             <animate
               attributeName="opacity"
@@ -252,67 +237,12 @@
             />
           </text>
         </g>
-
-        <!-- <image
-          xlink:href="./images/star.gif"
-          x="140"
-          y="350"
-          width="135"
-          height="135"
-          id="startButton"
-          onclick="startGame()"
-        >
-          <animate
-            attributeName="opacity"
-            from="1"
-            to="0"
-            begin="click"
-            dur="0.1s"
-            fill="freeze"
-            restart="never"
-          />
-        </image> -->
-        <!-- </g> -->
-        <!-- 第一页 -->
-        <!-- 第二页 -->
         <g id="twoPage">
-          <!-- <circle
-          cx="500"
-          cy="410"
-          r="35"
-          fill="none"
-          stroke="#fede66"
-          stroke-width="3"
-          opacity=0
-        >
-        <animate
-        attributeName="cx"
-        from="500"
-        to="199"
-        begin="startButton.click"
-        dur="0.1s"
-        fill="freeze"
-      />
-          <animate
-            attributeName="r"
-            from="35"
-            to="75"
-            begin="runButton.click"
-            dur="0.1s"
-          />
-          <animate
-          attributeName="opacity"
-          values="0;0.8;0.6;0.4;0.2;0;"
-          begin="runButton.click"
-          dur="0.1s"
-          fill="freeze"
-        />
-        </circle> -->
           <image
             xlink:href="./images/draw_text.png"
-            x="25"
+            x="25%"
             y="25%"
-            width="300"
+            width="50%"
             height="105"
             opacity="0"
           >
@@ -326,105 +256,15 @@
               restart="never"
             />
           </image>
-          <text
-            x="300"
-            y="57.2%"
-            fill="#d12e1b"
-            font-size="38"
-            opacity="0"
-            id="runButton"
-            font-weight="700"
-            onclick="showPackage()"
-          >
-            咻
-            <animate
-              attributeName="x"
-              from="300"
-              to="172"
-              begin="startButton.click"
-              dur="0.1s"
-              fill="freeze"
-              restart="never"
-            />
-            <animate
-              attributeName="opacity"
-              values="0;0.1;0.1;0.1;0.6;0.8;1"
-              from="0"
-              to="1"
-              begin="startButton.click"
-              dur="0.1s"
-              fill="freeze"
-              restart="never"
-            />
-          </text>
-          <!-- <image
-            xlink:href="./images/draw.png"
-            x="280"
-            y="353"
-            id="runButton"
-            width="10rem"
-          height="10rem"
-            opacity="0"
-            onclick="showPackage()"
-          >
-          <animate
-          attributeName="x"
-            from="280"
-            to="140"
-            begin="startButton.click"
-            dur="0.1s"
-            fill="freeze"
-            restart="never"
-        />
-            <animate
-              attributeName="opacity"
-              from="0"
-              to="1"
-              begin="startButton.click"
-              dur="0.1s"
-              fill="freeze"
-            />
-          </image> -->
         </g>
         <g id="parent">
-          <!-- <rect
-            x="0"
-            y="0"
-            opacity="0.5"
-            height="100%"
-            width="100%"
-            fill="#000000"
-          />
-          <image
-            xlink:href="./images/result_text.png"
-            x="7%"
-            y="14%"
-            class="parent-img"
-            width="86%"
-            height="220"
-          />
-          <image
-            xlink:href="./images/button_background.png"
-            x="7%"
-            y="45%"
-            width="86%"
-            height="200"
-          />
-          <image
-            xlink:href="./images/button.png"
-            x="30%"
-            y="57%"
-            width="40%"
-            height=60
-            onclick="goToActive()"
-          /> -->
         </g>
         <g id="loading">
         </g>
       </svg>
     </div>
     <script>
-
+      var myAuto = document.getElementById("myaudio");
       var num = 0;
       var oldTime = null;
       var isStart = false;
@@ -432,17 +272,15 @@
       var circleButton = document.getElementById("circleButton");
       var twoPage = document.getElementById("twoPage");
       var loading = document.getElementById("loading");
-      var myAuto = document.getElementById("myaudio");
+      var startButton = document.getElementById("startButton");
       function startGame() {
         isStart = true;
-        //预加载第二页的声音
-        myAuto.setAttribute("src", "xiu.mp3");
         myAuto.play();
         myAuto.pause();
-        //此时图片懒加载
+        let child='<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge> 咻 </text>';
+        startButton.innerHTML = child;
       }
       function showPackage() {
-       
         //判断是否已经点击了开始游戏，不然不允许进行咻一咻
         if (isStart) {
           // if(myAuto.paused){
@@ -453,11 +291,12 @@
           if (num != 3) {
             num = num + 1;
           } else if (num == 3) {
-            let child ='<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/result_text.png" x="7%" y="14%" class="parent-img" width="86%" height="220"/><image xlink:href="./images/button_background.png" x="7%" y="45%" width="86%" height="200"/><image  xlink:href="./images/button.png"  x="30%"  y="57%" width="40%"  height=60  onclick="goToActive()"/>';
+            let child ='<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/result_text.png" x="7%" y="15%" width="86%" height="220"/><image xlink:href="./images/button_background.png" x="7%" y="45%" width="86%" height="200"/><image  xlink:href="./images/button.png"  x="30%"  y="57%" width="40%"  height=60  onclick="goToActive()"/>';
             setTimeout(function() {
               svgDoc.innerHTML = child;
               twoPage.innerHTML = "";
               circleButton.innerHTML = "";
+              startButton.innerHTML = '';
             }, 1000);
           }
         }
