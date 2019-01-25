@@ -56,13 +56,8 @@
   </head>
   <body>
     <div class="app">
-      <audio
-        src="xiu.mp3"
-        id="myaudio"
-        controls="controls"
-        hidden="true"
-        preload="load"
-      ></audio>
+        <audio src="" id="myaudio" controls="controls" hidden="true" preload="load"></audio>
+     
       <!-- <svg style="display:inline-block;width:100%;height:100%;">
         <image x="0" y="0"
           width="200" height="126"
@@ -429,7 +424,7 @@
       </svg>
     </div>
     <script>
-      var myAuto = document.getElementById("myaudio");
+
       var num = 0;
       var oldTime = null;
       var isStart = false;
@@ -437,12 +432,16 @@
       var circleButton = document.getElementById("circleButton");
       var twoPage = document.getElementById("twoPage");
       var loading = document.getElementById("loading");
+      var myAuto = document.getElementById("myaudio");
       function startGame() {
         isStart = true;
+        myAuto.setAttribute("src", "xiu.mp3");
         myAuto.play();
         myAuto.pause();
+        //此时图片懒加载
       }
       function showPackage() {
+       
         //判断是否已经点击了开始游戏，不然不允许进行咻一咻
         if (isStart) {
           // if(myAuto.paused){
