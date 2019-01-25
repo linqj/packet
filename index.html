@@ -227,7 +227,7 @@
           </circle>
         </g>
         <g id="startButton" onclick="startGame()">
-          <text x="165" y="360" fill="#d12e1b" font-size="25" font-weight="700">
+          <text x="165" y="54.5%" fill="#d12e1b" font-size="25" font-weight="700">
             开始
             <animate
               attributeName="opacity"
@@ -239,7 +239,7 @@
               restart="never"
             />
           </text>
-          <text x="165" y="387" fill="#d12e1b" font-size="25" font-weight="700">
+          <text x="165" y="58.3%" fill="#d12e1b" font-size="25" font-weight="700">
             游戏
             <animate
               attributeName="opacity"
@@ -311,7 +311,7 @@
           <image
             xlink:href="./images/draw_text.png"
             x="25"
-            y="185"
+            y="25%"
             width="300"
             height="105"
             opacity="0"
@@ -328,7 +328,7 @@
           </image>
           <text
             x="300"
-            y="380"
+            y="57.2%"
             fill="#d12e1b"
             font-size="38"
             opacity="0"
@@ -435,6 +435,7 @@
       var myAuto = document.getElementById("myaudio");
       function startGame() {
         isStart = true;
+        //预加载第二页的声音
         myAuto.setAttribute("src", "xiu.mp3");
         myAuto.play();
         myAuto.pause();
