@@ -59,7 +59,7 @@
   <body>
     <div class="app">
       <audio
-        src="xiu.mp3"
+        src=""
         id="myaudio"
         controls="controls"
         hidden="true"
@@ -273,8 +273,11 @@
       var twoPage = document.getElementById("twoPage");
       var loading = document.getElementById("loading");
       var startButton = document.getElementById("startButton");
+      var myaudio = document.getElementById("myaudio");
       function startGame() {
         isStart = true;
+        //缓存音乐
+        myAuto.setAttribute('src','xiu.mp3');
         myAuto.play();
         myAuto.pause();
         let child='<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge> 咻 </text>';
