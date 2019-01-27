@@ -54,9 +54,6 @@
                   pointer-events:auto;
                   dominant-baseline: middle; /* 文本垂直居中 */
             }
-            /* #parent{
-              display:none;
-            } */
     </style>
   </head>
   <body>
@@ -77,18 +74,15 @@
         viewBox="0 0 100% 100%"
         preserveAspectRatio="xMidYMid meet"
       >
-      <g>
+      <g id="startImg">
           <image
           xlink:href="./images/start_text.webp"
           x="7%"
           y="25%"
-          id="startImg"
-          display='block'
           width="86%"
           height="105"
         >
         </image>
-        <image id="drawImg" display='none' xlink:href="./images/draw_text.webp" x="23%" y="25%" width="50%" height="105"/>
       </g>
         <g id="circleButton">
           <circle cx="50%" cy="55%" r="38" fill="#ffe405" opacity="0.9">
@@ -236,11 +230,9 @@
             />
           </text>
         </g>
-        <g id="parent" display="none">
-            <rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/result_text.webp" x="7%" y="15%" width="86%" height="220"/><image xlink:href="./images/button_background.webp" x="7%" y="45%" width="86%" height="200"/><image  xlink:href="./images/button.webp"  x="30%"  y="57%" width="40%"  height=60  onclick="goToActive()"/>
+        <g id="parent">
         </g>
-        <g id="loading" display="none">
-            <rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"></rect><image xlink:href="./images/lailai.gif" x="10%" y="180" width="80%" height="250"/>
+        <g id="loading">
         </g>
       </svg>
     </div>
@@ -253,7 +245,7 @@
       var circleButton = document.getElementById("circleButton");
       var loading = document.getElementById("loading");
       var startButton = document.getElementById("startButton");
-      var drawImg = document.getElementById("drawImg");
+      var myaudio = document.getElementById("myaudio");
       var startImg = document.getElementById("startImg");
       function startGame() {
         isStart = true;
@@ -263,8 +255,8 @@
         myAuto.pause();
         let child='<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge>咻</text>';
         startButton.innerHTML = child;
-        drawImg.setAttribute('display','block');
-        startImg.setAttribute('display','none');
+        let startChangeImg='<image xlink:href="./images/draw_text.webp" x="23%" y="25%" width="50%" height="105"/>'
+        startImg.innerHTML = startChangeImg;
       }
       function showPackage() {
         //判断是否已经点击了开始游戏，不然不允许进行咻一咻
@@ -274,8 +266,9 @@
           if (num != 3) {
             num = num + 1;
           } else if (num == 3) {
+            let child ='<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"/><image xlink:href="./images/result_text.webp" x="7%" y="15%" width="86%" height="220"/><image xlink:href="./images/button_background.webp" x="7%" y="45%" width="86%" height="200"/><image  xlink:href="./images/button.webp"  x="30%"  y="57%" width="40%"  height=60  onclick="goToActive()"/>';
             setTimeout(function() {
-              svgDoc.setAttribute('display','block');
+              svgDoc.innerHTML = child;
               circleButton.innerHTML = "";
               startButton.innerHTML = '';
               startImg.innerHTML = '';
@@ -283,8 +276,11 @@
           }
         }
       }
+
       function goToActive() {
-        loading.setAttribute('display','block');
+        let child =
+          '<rect x="0" y="0" opacity="0.5" height="100%" width="100%" fill="#000000"></rect><image xlink:href="./images/lailai.gif" x="10%" y="180" width="80%" height="250"/>';
+        loading.innerHTML = child;
         window.location.href = "https://www.baidu.com/";
       }
     </script>
