@@ -67,42 +67,49 @@
         viewBox="0 0 100% 100%"
         preserveAspectRatio="xMidYMid meet"
       >
-        <g>
+        <g  id="startImg" display="block">
           <image
             xlink:href="./images/start_text.png"
             x="7%"
             y="25%"
-            id="startImg"
             display="block"
             width="86%"
             height="105"
           ></image>
           <image
-            id="drawImg"
-            display="none"
-            xlink:href="./images/draw_text.png"
-            x="23%"
-            y="25%"
-            width="50%"
-            height="105"
-          />
+          xlink:href="./images/start_button.png"
+          x="33%"
+            y="50%"
+          display="block"
+          width="34%"
+          height="60"
+          onclick="startGame()"
+          id="startButton"
+        ></image>
         </g>
-        <g id="circleButton">
-          <circle cx="50%" cy="55%" r="38" fill="#ffe405" opacity="0.9">
-            <animate
-              attributeName="fill"
-              from="#fee233"
-              to="#fcdb54"
-              begin="0s"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </circle>
+        <g id="circleButton"  display="none">
+            <image
+        xlink:href="./images/draw_text.png"
+        x="7%"
+        y="25%"
+        display="block"
+        width="86%"
+        height="105"
+      >
+    </image>
+          <image
+            xlink:href="./images/xiu_button.png"
+            x="35%"
+            y="44%"
+            width="30%"
+            height="90"
+            onclick="showPackage()"
+          />
           <!-- 第一条虚线 -->
           <circle
             cx="50%"
-            cy="55%"
-            r="40"
+            cy="50%"
+            r="34%"
             fill="none"
             stroke="#ffe405"
             stroke-width="2"
@@ -128,8 +135,8 @@
           <!-- 第二条虚线 -->
           <circle
             cx="50%"
-            cy="55%"
-            r="46"
+            cy="50%"
+            r="35%"
             fill="none"
             stroke="#ffe405"
             stroke-width="1.8"
@@ -155,8 +162,8 @@
           <!-- 第3条虚线 -->
           <circle
             cx="50%"
-            cy="55%"
-            r="50"
+            cy="50%"
+            r="36%"
             fill="none"
             stroke="#ffe405"
             stroke-width="1.5"
@@ -182,8 +189,8 @@
           <!-- 第4条虚线 -->
           <circle
             cx="50%"
-            cy="55%"
-            r="58"
+            cy="50%"
+            r="37%"
             fill="none"
             stroke="#ffe405"
             stroke-width="1.5"
@@ -206,46 +213,25 @@
               repeatCount="indefinite"
             />
           </circle>
-        </g>
-        <g id="startButton">
           <text
-            x="50%"
-            y="53.5%"
-            onclick="startGame()"
-            fill="#d12e1b"
-            font-size="25"
-            dominant-baseline="text-before-edge"
-          >
-            开始
-            <animate
-              attributeName="opacity"
-              from="1"
-              to="0"
-              begin="startButton.click"
-              dur="0.1s"
-              fill="freeze"
-              restart="never"
-            />
-          </text>
-          <text
-            x="50%"
-            y="57.2%"
-            onclick="startGame()"
-            fill="#d12e1b"
-            font-size="25"
-            dominant-baseline="text-before-edge"
-          >
-            游戏
-            <animate
-              attributeName="opacity"
-              from="1"
-              to="0"
-              begin="startButton.click"
-              dur="0.1s"
-              fill="freeze"
-              restart="never"
-            />
-          </text>
+          x="50%"
+          y="60%"
+          fill="#905983"
+          font-size="14"
+          dominant-baseline="text-before-edge"
+          opacity="0"
+        >
+          请快速连续点击“咻”按键
+          <animate
+            attributeName="opacity"
+            from="0"
+            to="1"
+            begin="startButton.click"
+            dur="1s"
+            fill="freeze"
+            restart="never"
+          />
+        </text>
         </g>
         <g id="parent" display="none">
           <rect
@@ -258,10 +244,10 @@
           />
           <image
             xlink:href="./images/result_text.png"
-            x="7%"
-            y="15%"
-            width="86%"
-            height="220"
+            x="5%"
+            y="5%"
+            width="90%"
+            height="300"
           />
           <image
             xlink:href="./images/button_background.png"
@@ -271,11 +257,11 @@
             height="200"
           />
           <image
-            xlink:href="./images/button.png"
+            xlink:href="./images/draw_button.png"
             x="30%"
             y="57%"
             width="40%"
-            height="60"
+            height="70"
             onclick="goToActive()"
           />
         </g>
@@ -315,10 +301,10 @@
         // myAuto.setAttribute('src','xiu.mp3');
         myAuto.play();
         myAuto.pause();
-        let child =
-          '<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge>咻</text>';
-        startButton.innerHTML = child;
-        drawImg.setAttribute("display", "block");
+        // let child =
+        //   '<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge>咻</text>';
+        // startButton.innerHTML = child;
+        circleButton.setAttribute("display", "block");
         startImg.setAttribute("display", "none");
       }
       function showPackage() {
