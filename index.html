@@ -98,7 +98,7 @@
       >
     </image>
           <image
-          transform="translate(-40,-40)"
+          transform="translate(-40,-38)"
             xlink:href="./images/xiu_button.png"
             x="50%"
             y="54%"
@@ -304,7 +304,9 @@
         // let child =
         //   '<text x="50%" y="55.5%" id="runButton" onclick="showPackage()" fill="#d12e1b" font-size="38" dominant-baseline=text-before-edge>咻</text>';
         // startButton.innerHTML = child;
-        circleButton.setAttribute("display", "block");
+        setTimeout(function() {
+          circleButton.setAttribute("display", "block");
+            }, 500);
         startImg.setAttribute("display", "none");
       }
       function showPackage() {
